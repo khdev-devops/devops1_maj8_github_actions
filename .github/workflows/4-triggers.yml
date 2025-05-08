@@ -1,7 +1,7 @@
 name: Delövning 4 - Triggers
 
 on:
-  [push]
+  pull_request:
   #push:
   #  branches: "**"
   # 1. trigga på commit
