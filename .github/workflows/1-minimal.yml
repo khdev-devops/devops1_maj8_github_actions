@@ -4,8 +4,13 @@ on:
   # ska startas manuellt
   workflow_dispatch:
 jobs:
-  print-info:
-    runs-on: # vilken runner?
+  echo-pipeline:
+    runs-on: macos-latest
     steps:
-      - name: # namnge steget
-        run: # vad som ska göras
+      - name: Confirm pipeline has started
+        run: echo "pipeline has started"
+  echo-python-version:
+    runs-on: macos-latest
+    steps:
+      - name: Check and echo python version
+        run: echo "python --version"
