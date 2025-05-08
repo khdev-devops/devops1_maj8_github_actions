@@ -1,11 +1,14 @@
 name: Delövning 4 - Triggers
 
 on:
+  [push]
+  #push:
+  #  branches: "**"
   # 1. trigga på commit
   # 2. trigga på pull request
 jobs:
   trigger-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo info        
+      - name: Echo info
         run: echo "Workflow triggat av ..." # TODO: uppdatera texten
