@@ -4,17 +4,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  list-files:
+  checkout-code:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: show files
+        run: ls
+
       # 1. hur ser du till att repots filer finns tillgängliga?
       #    (tips: det finns en action från GitHub själva för detta)
       # 2. lista filerna i repot
-      
 
   print-message:
     runs-on: ubuntu-latest
-    # 3. se till att detta jobb endast körs efter att list-files är klart
+    needs: checkout-code
     steps:
       - name: Meddelande
         run: echo "Detta körs efter list-files"

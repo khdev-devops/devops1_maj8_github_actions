@@ -7,10 +7,12 @@ jobs:
   create-artifact:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout code
+        uses: actions/checkout@v3
       - name: Skapar log.txt
-        run: # 1. skapa filen
+        run: echo 'Hello, world.' >log.txt
       - name: Laddar upp loggfilen som artifact
-        uses: # 2a. vilken action kan användas här?
-        # 2b. vad heter denna sektion? 
+        uses: actions/upload-artifact@v4
+        with:
           name: loggfil
           path: log.txt

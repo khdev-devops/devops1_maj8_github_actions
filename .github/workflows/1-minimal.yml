@@ -1,11 +1,16 @@
-  name: Delövning 1 - Minimal Pipeline
-  
-  on:
+name: Delövning 1 - Minimal Pipeline
+
+on:
   # ska startas manuellt
-  
-  jobs:
-    print-info:
-      runs-on: # vilken runner?
-      steps:
-        - name: # namnge steget
-          run: # vad som ska göras
+  workflow_dispatch:
+jobs:
+  echo-pipeline:
+    runs-on: macos-latest
+    steps:
+      - name: Confirm pipeline has started
+        run: echo "pipeline has started"
+  echo-python-version:
+    runs-on: macos-latest
+    steps:
+      - name: Check and echo python version
+        run: python --version
